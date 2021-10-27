@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>glassmportphersm battery lovel</title>
+    <link rel="stylesheet" href="battery.css">
+</head>
+
+<body>
+    <section class="sec">
+
+        <div class="toggle"></div>
+        <div class="box">
+            <div class="content">
+                <H3>Battery</H3>
+                <div class="batteryahape">
+                    <div class="level">
+                        <div class="percentage"></div>
+                    </div>
+                </div>
+                <div class="percent">50%</div>
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+        let percentage = document.querySelector('.percentage');
+        let percent = document.querySelector('.percent');
+        navigator.getBattery().then(function(battery) {
+            percentage.style.width = battery.level * 100 + '%';
+            percent.innerHTML = battery.level * 100 + '%';
+
+        })
+    </script>
+</body>
+
+</html>
